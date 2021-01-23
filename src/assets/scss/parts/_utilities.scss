@@ -1,0 +1,49 @@
+$widths: (sm: 25%, md: 50%, lg: 75%, full: 100%);
+
+@each $key, $width in $widths {
+    .w-#{$key} {width: $width;}
+}
+
+$spacings: (5: 5px, 10: 10px, 15: 15px, 20: 20px, 40: 40px);
+
+@each $key, $space in $spacings {
+    .py-#{$key} {
+        padding-top: $space;
+        padding-bottom: $space;
+    }
+    .px-#{$key} {
+        padding-left: $space;
+        padding-right: $space;
+    }
+    .mx-#{$key} {
+        margin-left: $space;
+        margin-right: $space;
+    }
+    .my-#{$key} {
+        margin-top: $space;
+        margin-bottom: $space;
+    }
+}
+
+$radius: (sm: 5px, md: 10px, lg: 20px, xl: 30px, full: 50%);
+
+@each $key, $border in $radius {
+    .rounded-#{$key} {border-radius: $border;}
+}
+
+$colors: (primary: #6ac25e, secondary: #5e8357, light: #def8d6, dark: #004b74, blue: #0085e3);
+
+@each $key, $color in $colors {
+    .bg-#{$key} {
+        background-color: $color;
+    }
+    .text-#{$key} {
+        color: $color;
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

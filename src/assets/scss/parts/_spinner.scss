@@ -1,0 +1,33 @@
+.loader {
+    span {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(60deg, $primary, $secondary);
+        margin-left: 5px;
+        animation: grow 1s ease-in-out infinite;
+
+        &:nth-child(2n) {
+            animation-delay: .5s;
+        }
+
+        &:last-child {
+            animation-delay: .7s;
+        }
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+}
