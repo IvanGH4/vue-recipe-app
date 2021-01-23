@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import './mixins';
 
 * {
     margin: 0;
@@ -49,5 +50,11 @@ input {
 
     &[type="submit"] {
         cursor: pointer;
+    }
+}
+
+@include for-tablet {
+    body {
+        padding: 10px 20px;
     }
 }

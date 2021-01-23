@@ -1,0 +1,36 @@
+@import './mixins';
+
+.categories-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .cat-btn {
+        background-color: transparent;
+
+        &:active {
+            outline: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@include for-tablet {
+    .categories-btns {
+        .cat-btn {
+            margin: 0px 10px;
+        }
+    }
+}
+
+@include for-phone {
+    .categories-btns {
+        .cat-btn {
+            margin: 10px;
+        }
+    }
+}

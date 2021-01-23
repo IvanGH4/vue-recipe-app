@@ -1,7 +1,7 @@
 <template>
     <div class="modal flex-center px-40">
         <Loader v-if="isLoading" />
-        <div class="py-40 px-40 bg-light" v-for="(item,idx) in meal" :key="idx">
+        <div class="py-40 px-40 bg-light modal-info rounded-md" v-for="(item,idx) in meal" :key="idx">
             <div v-for="(ob, idx) in item" :key="idx">
                 <div class="title">
                     <h4>Instructions to preparation</h4>

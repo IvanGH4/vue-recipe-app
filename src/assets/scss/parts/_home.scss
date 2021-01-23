@@ -1,3 +1,5 @@
+@import './mixins';
+
 .home {
     max-width: 1140px;
     margin: 0 auto;
@@ -50,6 +52,7 @@
                 img {
                     width: 70px;
                     height: 70px;
+                    object-fit: cover;
                 }
             }
 
@@ -60,4 +63,26 @@
             }
         }
     }
+}
+
+@include for-tablet {
+    .home{
+        .cards-wrapper .card {
+            width: 40%;
+        }
+        h1 {
+            font-size: 24px;
+        }    
+    } 
+}
+
+@include for-phone {
+    .home{
+        .cards-wrapper .card {
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+        }    
+    } 
 }

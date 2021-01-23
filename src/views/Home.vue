@@ -9,6 +9,8 @@
       </form>
     </div>
 
+    <Categories />
+
     <Loader v-if="isLoading" />
 
     <div class="cards-wrapper" v-for="(item, idx) in mealsList" :key="idx">
@@ -42,13 +44,16 @@
 // @ is an alias to /src
 import SingleMeal from '@/components/share-tools/SingleMeal';
 import Loader from '@/components/share-tools/Loader';
+import Categories from '@/components/share-tools/Categories';
+
 import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'Home',
   components: {
     SingleMeal,
-    Loader
+    Loader,
+    Categories,
   },
   data() {
     return {
@@ -67,6 +72,7 @@ export default {
         const data = await resp.json();
         const info = data.meals;
         this.mealsList.push(info);
+        this.toggle();
         this.isLoading = false;
       } catch (error) {
           console.log(error);
@@ -79,12 +85,13 @@ export default {
     },
 
     ...mapActions({
-      click: 'setIsClicked'
+      click: 'setIsClicked',
+      toggle: 'setShowCatg'
     })
   },
   computed: {
     ...mapState({
-      clicked: state => state.isClicked
+      clicked: state => state.isClicked,
     })
   }
 }
